@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -24,7 +25,7 @@ public class ProdutoModel {
 	@Size(min = 3, max = 100, message = "O atributo nome deve ter entre 3 e 100 caracteres.")
 	private String nome;
 
-	@NotBlank(message = "O atributo preço não pode ser nulo ou branco!")
+	@NotNull(message = "O atributo preço não pode ser nulo ou branco!")
 	private double preco;
 	
 	@ManyToOne
